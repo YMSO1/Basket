@@ -32,7 +32,7 @@ public class BasketRestController {
     })
     @GetMapping
     public ResponseEntity<List<DocumentDto>> getAllContracts() {
-        return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(service.findAllToBasket(), HttpStatus.OK);
     }
 
     @ApiOperation(value = "Восстановление документа",

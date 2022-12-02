@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface DocumentRepository extends JpaRepository<Document, Long> {
-    @Query("select d from Document d where d.isRemoved = true and d.lastEdited between current_date AND current_date - 7")
+    @Query("select d from Document d where d.isRemoved = true and d.lastEdited between current_date AND current_date-7")
     List<Document> findAllRemovedToBasket();
 
     @Query("SELECT d FROM Document d WHERE d.isRemoved = false")
@@ -25,5 +25,4 @@ public interface DocumentRepository extends JpaRepository<Document, Long> {
     @Modifying
     @Query("UPDATE Document SET isRemoved = false WHERE id = :id")
     void markDocumentAsNotRemoved(Long id);
-
 }

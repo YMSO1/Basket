@@ -18,5 +18,4 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Modifying
     @Query("UPDATE Employee SET isRemoved = true WHERE id = :id")
     void markEmployeeAsRemoved(Long id);
-
 }

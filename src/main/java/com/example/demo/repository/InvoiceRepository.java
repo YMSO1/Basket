@@ -18,5 +18,4 @@ public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
     @Modifying
     @Query("UPDATE Invoice SET isRemoved = true WHERE id = :id")
     void markInvoiceAsRemoved(Long id);
-
 }

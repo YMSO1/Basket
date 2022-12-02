@@ -12,6 +12,8 @@ public interface DocumentService {
 
     List<DocumentDto> findAll();
 
+    List<DocumentDto> findAllToBasket();
+
     DocumentDto findById(Long id);
 
     void save(DocumentDto documentDto);

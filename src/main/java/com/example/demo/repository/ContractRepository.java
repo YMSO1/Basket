@@ -18,5 +18,4 @@ public interface ContractRepository extends JpaRepository<Contract, Long> {
     @Modifying
     @Query("UPDATE Contract SET isRemoved = true WHERE id = :id")
     void markContractAsRemoved(Long id);
-
 }
